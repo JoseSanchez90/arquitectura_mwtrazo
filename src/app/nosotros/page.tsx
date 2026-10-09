@@ -44,7 +44,7 @@ export default function About() {
               contribuyendo al desarrollo personal, familiar y profesional de
               cada uno de nuestros clientes.
             </p>
-            <ButtonLink href="/verificador-sunarp" className="mt-8">
+            <ButtonLink href="/verificador-sunarp" className="mt-8 ">
               Nuestros verificadores
             </ButtonLink>
           </div>

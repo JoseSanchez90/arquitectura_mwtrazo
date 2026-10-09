@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CircleArrowUp } from "lucide-react";
 import { contact, services, stats } from "@/lib/content";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const container =
   "mx-auto w-full max-w-[1200px] px-6 sm:px-10 xl:px-[30px]";
@@ -167,7 +168,7 @@ export function ServiceCards() {
 
 export function CallToAction() {
   return (
-    <section className="relative isolate overflow-hidden bg-neutral-800 px-6 py-24 text-center text-white md:py-32">
+    <section className="relative isolate overflow-hidden bg-neutral-800 px-6 py-24 text-center md:py-32">
       <Image
         src="/images/contact-background.jpg"
         alt=""
@@ -176,17 +177,17 @@ export function CallToAction() {
         className="-z-20 object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-black/20" />
-      <h2 className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px]">
+      <h2 className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px] text-white">
         Inicia tu formalización hoy
       </h2>
-      <p className="mx-auto mt-8 max-w-150 text-sm leading-relaxed">
+      <p className="mx-auto mt-8 max-w-150 text-sm leading-relaxed text-white">
         Conversemos sobre tu caso. Revisamos toda tu documentación
         preventivamente para asegurar el éxito de tu trámite, con rapidez y
         total transparencia en cada paso.
       </p>
       <ButtonLink
         href="/contactanos"
-        className="mt-12 hover:bg-white hover:text-black"
+        className="mt-12 text-white hover:bg-white hover:text-zinc-950"
       >
         Contáctanos
       </ButtonLink>
@@ -258,8 +259,14 @@ export function Footer() {
             <a href={`mailto:${contact.email}`} className="hover:text-white">
               {contact.email}
             </a>
-            <a href={contact.whatsapp} className="hover:text-white">
-              {contact.phone}
+            <a
+              href={contact.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1 hover:text-white"
+            >
+              <FaWhatsapp size={16} strokeWidth={2} aria-hidden="true" />
+              Whatsapp
             </a>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { contact, services } from "@/lib/content";
+import { FaWhatsapp } from "react-icons/fa";
 
 export function Header({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -183,8 +184,11 @@ export function Header({ children }: { children: React.ReactNode }) {
             </Link>
           </nav>
           <div className="mt-auto pt-16 text-xs leading-7 text-neutral-400">
-            <a href={contact.whatsapp}>{contact.phone}</a>
-            <p>{contact.location}</p>
+            <a href={contact.whatsapp} className="flex items-center gap-1">
+              <FaWhatsapp size={16} strokeWidth={2} aria-hidden="true" />
+              Whatsapp
+            </a>
+            <p className="mt-2">{contact.location}</p>
           </div>
         </div>
       </dialog>
