@@ -1,3 +1,4 @@
+import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -40,9 +41,9 @@ export default async function ServicePage({
       <div className={`${container} py-12 md:py-16`}>
         <Link
           href="/servicios"
-          className="mb-8 inline-block text-xs uppercase tracking-wide text-neutral-500 hover:text-black"
+          className="group/arrow mb-8 inline-block text-xs uppercase tracking-wide text-neutral-500 hover:text-black"
         >
-          ← Todos los servicios
+          <AnimatedArrow direction="left" /> Todos los servicios
         </Link>
         <div className="grid gap-12 lg:grid-cols-[2.1fr_1fr]">
           <article>
@@ -156,9 +157,9 @@ export default async function ServicePage({
               <CheckList items={s.benefits} />
               <ButtonLink
                 href={`${contact.whatsapp}?text=${encodeURIComponent(`Hola, quisiera consultar sobre ${s.title.toLowerCase()}.`)}`}
-                className="mt-8 w-full"
+                className="group/arrow mt-8 w-full"
               >
-                Consultar mi caso ↗
+                Consultar mi caso <AnimatedArrow direction="diagonal" />
               </ButtonLink>
             </div>
             <div>
@@ -170,10 +171,10 @@ export default async function ServicePage({
                   key={other.slug}
                   href={`/servicios/${other.slug}`}
                   aria-current={other.slug === slug ? "page" : undefined}
-                  className={`block border-b border-neutral-200 py-5 text-sm ${other.slug === slug ? "font-semibold" : "text-neutral-500 hover:text-black"}`}
+                  className={`group/arrow flex items-center justify-between gap-3 border-b border-neutral-200 py-5 text-sm ${other.slug === slug ? "font-semibold" : "text-neutral-500 hover:text-black"}`}
                 >
                   {other.shortTitle}
-                  <span className="float-right">→</span>
+                  <AnimatedArrow />
                 </Link>
               ))}
             </div>
@@ -189,9 +190,9 @@ export default async function ServicePage({
               </p>
               <Link
                 href="/verificador-sunarp"
-                className="mt-7 inline-block border-b pb-2 text-xs uppercase"
+                className="group/arrow mt-7 inline-block border-b pb-2 text-xs uppercase"
               >
-                Conoce más →
+                Conoce más <AnimatedArrow />
               </Link>
             </div>
           </aside>

@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { CountUp } from "@/components/count-up";
 import Link from "next/link";
 import { CircleArrowUp } from "lucide-react";
 import { contact, services, stats } from "@/lib/content";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 
 export const container =
   "mx-auto w-full max-w-[1200px] px-6 sm:px-10 xl:px-[30px]";
@@ -64,7 +65,7 @@ export function Photo({
   sizes?: string;
 }) {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div data-reveal className={`relative overflow-hidden ${className}`}>
       <Image
         src={src}
         alt={alt}
@@ -128,7 +129,9 @@ export function Stats() {
     <div className="grid grid-cols-2 gap-x-7 gap-y-10 border-y border-neutral-200 py-10 md:grid-cols-4">
       {stats.map(([n, t]) => (
         <div key={t}>
-          <p className="text-4xl font-light md:text-5xl">{n}</p>
+          <p className="text-4xl font-light md:text-5xl">
+            <CountUp value={n} />
+          </p>
           <p className="mt-3 text-[10px] tracking-[.13em] uppercase sm:text-xs">
             {t}
           </p>
@@ -156,9 +159,10 @@ export function ServiceCards() {
           </p>
           <span className="mt-auto flex items-center gap-3 pt-7 text-xs uppercase tracking-wider text-white">
             Ver servicio{" "}
-            <span className="transition-transform group-hover:translate-x-2">
-              →
-            </span>
+            <FaArrowRight
+              aria-hidden="true"
+              className="size-3.5 shrink-0 transition-transform duration-200 group-hover:translate-x-2 motion-reduce:transform-none"
+            />
           </span>
         </Link>
       ))}
@@ -274,7 +278,7 @@ export function Footer() {
       <div
         className={`${container} flex flex-wrap items-center justify-between gap-4 border-t border-white/15 py-7 text-[11px] text-neutral-400`}
       >
-        <p>© 2026 MWTRAZO. Todos los derechos reservados.</p>
+        <p>© 2021 MWTRAZO. Todos los derechos reservados.</p>
         <a
           href="#top"
           aria-label="Volver arriba"

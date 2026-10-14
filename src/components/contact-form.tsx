@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedArrow } from "@/components/animated-arrow";
 import { useState } from "react";
 import { contact, services } from "@/lib/content";
 import { button } from "./ui";
@@ -75,8 +76,8 @@ export function ContactForm() {
           placeholder="Ubicación, tipo de propiedad y trámite que necesitas..."
         />
       </label>
-      <button type="submit" className={`${button} cursor-pointer`}>
-        Preparar consulta <span>→</span>
+      <button type="submit" className={`group/arrow ${button} cursor-pointer`}>
+        Preparar consulta <AnimatedArrow />
       </button>
       {draft && (
         <div
@@ -92,9 +93,9 @@ export function ContactForm() {
             href={`${contact.whatsapp}?text=${encodeURIComponent(draft)}`}
             target="_blank"
             rel="noreferrer"
-            className={`${button} mt-5 bg-black text-white`}
+            className={`group/arrow ${button} mt-5 bg-black text-white`}
           >
-            Continuar en WhatsApp ↗
+            Continuar en WhatsApp <AnimatedArrow direction="diagonal" />
           </a>
         </div>
       )}

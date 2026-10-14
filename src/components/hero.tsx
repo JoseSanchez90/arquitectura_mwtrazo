@@ -123,10 +123,15 @@ export function Hero() {
         onClick={() => setPaused((value) => !value)}
         aria-label={paused ? "Reanudar presentación" : "Pausar presentación"}
         title={paused ? "Reanudar presentación" : "Pausar presentación"}
-        className="absolute right-6 bottom-4 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-white/35 bg-white/10 text-white backdrop-blur-sm transition-colors hover:border-white/70 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:bg-white/30"
+        className="absolute right-6 bottom-12 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-white/35 bg-white/10 text-white backdrop-blur-sm transition-colors hover:border-white/70 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:bg-white/30"
       >
         {paused ? (
-          <Play size={18} strokeWidth={1.75} className="ml-0.5" aria-hidden="true" />
+          <Play
+            size={18}
+            strokeWidth={1.75}
+            className="ml-0.5"
+            aria-hidden="true"
+          />
         ) : (
           <Pause size={18} strokeWidth={1.75} aria-hidden="true" />
         )}

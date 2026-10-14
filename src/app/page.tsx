@@ -1,3 +1,4 @@
+import { AnimatedArrow } from "@/components/animated-arrow";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
 import { Faq } from "@/components/faq";
@@ -143,9 +144,9 @@ export default function Home() {
         <div className="mt-8 text-center">
           <Link
             href="/proyectos"
-            className="border-b border-neutral-400 pb-2 text-xs tracking-wider uppercase"
+            className="group/arrow border-b border-neutral-400 pb-2 text-xs tracking-wider uppercase"
           >
-            Ver todos los proyectos →
+            Ver todos los proyectos <AnimatedArrow />
           </Link>
         </div>
       </section>

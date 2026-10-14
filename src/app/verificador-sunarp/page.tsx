@@ -1,3 +1,4 @@
+import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import {
   ButtonLink,
@@ -113,8 +114,8 @@ export default function Verifier() {
           <p className="mb-6 text-sm">
             Analizamos la situación de tu predio antes de cualquier compromiso.
           </p>
-          <ButtonLink href={contact.whatsapp}>
-            Solicitar evaluación gratuita ↗
+          <ButtonLink className="group/arrow" href={contact.whatsapp}>
+            Solicitar evaluación gratuita <AnimatedArrow direction="diagonal" />
           </ButtonLink>
         </div>
       </section>

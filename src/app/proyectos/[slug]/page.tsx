@@ -1,3 +1,4 @@
+import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -31,9 +32,9 @@ export default async function Project({
       <section className={`${container} py-14`}>
         <Link
           href="/proyectos"
-          className="mb-8 inline-block text-xs tracking-wide uppercase"
+          className="group/arrow mb-8 inline-block text-xs tracking-wide uppercase"
         >
-          ← Todos los proyectos
+          <AnimatedArrow direction="left" /> Todos los proyectos
         </Link>
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
           <div>

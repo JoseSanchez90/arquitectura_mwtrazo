@@ -1,7 +1,7 @@
 export const contact = {
   whatsapp: "https://wa.me/51947224879",
   phone: "+51 947 224 879",
-  email: "contacto@hotmail.com",
+  email: "mw.trazo@gmail.com",
   location: "Lima y Callao, Perú",
   map: "https://maps.app.goo.gl/REKArk6kkPzxTrak6",
 };

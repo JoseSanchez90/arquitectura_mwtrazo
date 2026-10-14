@@ -1,7 +1,9 @@
+import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { CheckList, container, SectionTitle } from "@/components/ui";
 import { contact } from "@/lib/content";
+import { SiGooglemaps } from "react-icons/si";
 
 export const metadata: Metadata = { title: "Contáctanos" };
 export default function Contact() {
@@ -25,17 +27,22 @@ export default function Contact() {
                   href={contact.map}
                   target="_blank"
                   rel="noreferrer"
-                  className="leading-7 hover:underline"
+                  className="group/arrow  hover:underline"
                 >
-                  {contact.location} ↗
+                  {contact.location} <AnimatedArrow direction="diagonal" />
                 </a>
               </div>
               <div>
                 <p className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
-                  WhatsApp directo
+                  Mensaje directo
                 </p>
-                <a href={contact.whatsapp} className="hover:underline">
-                  {contact.phone}
+                <a
+                  href={contact.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group/arrow hover:underline"
+                >
+                  WhatsApp <AnimatedArrow direction="diagonal" />
                 </a>
               </div>
               <div>
@@ -70,7 +77,7 @@ export default function Contact() {
           documentación para evitar inconvenientes futuros.”
         </blockquote>
       </section>
-      <section className="bg-neutral-100 px-6 py-14 text-center">
+      <section className="bg-neutral-100 w-full px-6 py-14 text-center flex flex-col items-center">
         <p className="text-xs tracking-widest uppercase">
           Lima y Callao · Perú
         </p>
@@ -78,12 +85,14 @@ export default function Contact() {
           Cerca de ti y de tu propiedad
         </h2>
         <a
-          className="mt-6 inline-block border-b border-neutral-500 pb-2 text-xs uppercase"
+          className="group/arrow w-fit mt-6 flex justify-center items-center border-b border-neutral-500 gap-2 pb-1 text-xs uppercase"
           href={contact.map}
           target="_blank"
           rel="noreferrer"
         >
-          Ver ubicación en Google Maps ↗
+          <p>Ver ubicación en Google Maps</p>{" "}
+          <SiGooglemaps className="w-4 h-4" />{" "}
+          <AnimatedArrow direction="diagonal" />
         </a>
       </section>
     </main>

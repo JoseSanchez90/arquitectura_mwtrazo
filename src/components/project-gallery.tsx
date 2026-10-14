@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedArrow } from "@/components/animated-arrow";
 import { useState } from "react";
 import Link from "next/link";
 import { projects } from "@/lib/content";
@@ -34,7 +35,7 @@ export function ProjectGallery() {
       <div className="grid gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((p) => (
           <Link
-            className="group block"
+            className="group/arrow group block"
             key={p.slug}
             href={`/proyectos/${p.slug}`}
           >
@@ -53,9 +54,7 @@ export function ProjectGallery() {
                   {p.category} / {p.year}
                 </p>
               </div>
-              <span className="text-xl transition-transform group-hover:translate-x-1">
-                ↗
-              </span>
+              <AnimatedArrow direction="diagonal" className="size-5" />
             </div>
             <p className="mt-3 text-xs leading-5 text-neutral-500">{p.title}</p>
           </Link>
