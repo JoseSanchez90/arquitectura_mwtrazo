@@ -12,8 +12,15 @@ export function ScrollReveal() {
     const seen = new WeakSet<Element>();
     const pending = new Set<HTMLElement>();
     const animations = new Map<HTMLElement, Animation>();
+    const preparation = new Map<HTMLElement, Animation>();
+
+    const clearPreparation = (element: HTMLElement) => {
+      preparation.get(element)?.cancel();
+      preparation.delete(element);
+    };
 
     const finish = (element: HTMLElement) => {
+      clearPreparation(element);
       animations.get(element)?.cancel();
       animations.delete(element);
       pending.delete(element);
@@ -32,25 +39,34 @@ export function ScrollReveal() {
           continue;
         }
 
-        const animation = animations.get(element);
-        animation?.effect?.updateTiming({ delay: Math.min(order++ * 70, 210) });
-        animation?.play();
+        play(element, Math.min(order++ * 70, 210));
       }
     }, {
       threshold: 0,
       rootMargin: `0px 0px -${Math.round(window.innerHeight * 0.22)}px 0px`,
     });
 
+    function play(element: HTMLElement, delay = 0) {
+      clearPreparation(element);
+      if (preference.matches) return;
+      const animation = element.animate(
+        [{ translate: "0 24px", opacity: 0 }, { translate: "0 0", opacity: 1 }],
+        { duration: 950, delay, easing: "cubic-bezier(0.25, 0.1, 0.25, 1)", fill: "backwards" },
+      );
+      animation.onfinish = () => finish(element);
+      animations.set(element, animation);
+    }
+
     // The last items cannot reach the trigger line once the page ends.
-    const revealAtPageEnd = () => {
-      if (window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 2) return;
+    const endObserver = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
       for (const element of pending) {
         if (element.getBoundingClientRect().top >= window.innerHeight) continue;
         observer.unobserve(element);
         pending.delete(element);
-        animations.get(element)?.play();
+        play(element);
       }
-    };
+    });
 
     const scan = () => {
       for (const element of pending) {
@@ -71,18 +87,15 @@ export function ScrollReveal() {
           // content was already visible, so the entrance was barely noticeable.
           // Keep content above the restored scroll position visible.
           if (element.getBoundingClientRect().bottom <= 0) return;
-          const animation = element.animate(
-            [{ translate: "0 24px", opacity: 0 }, { translate: "0 0", opacity: 1 }],
-            {
-              duration: 950,
-              easing: "cubic-bezier(0.25, 0.1, 0.25, 1)",
-              fill: "both",
-            },
-          );
-          animation.pause();
-          animation.currentTime = 0;
-          animation.onfinish = () => finish(element);
-          animations.set(element, animation);
+          // A static Web Animation changes presentation, not React-owned HTML
+          // attributes. This is safe even while a streamed boundary hydrates.
+          const hidden = element.animate([{ opacity: 0 }, { opacity: 0 }], {
+            duration: 1,
+            fill: "both",
+          });
+          hidden.pause();
+          hidden.currentTime = 0;
+          preparation.set(element, hidden);
           pending.add(element);
           observer.observe(element);
         });
@@ -90,7 +103,10 @@ export function ScrollReveal() {
     };
 
     // Streaming routes, FAQ answers and filtered projects can arrive after mount.
-    const mutations = new MutationObserver(scan);
+    const mutations = new MutationObserver((records) => {
+      // Ignore text updates from counters; only discover newly inserted elements.
+      if (records.some((record) => [...record.addedNodes].some((node) => node instanceof HTMLElement))) scan();
+    });
     mutations.observe(document.body, { childList: true, subtree: true });
     const onPreferenceChange = () => {
       if (preference.matches) {
@@ -104,13 +120,15 @@ export function ScrollReveal() {
       }
     };
     scan();
-    window.addEventListener("scroll", revealAtPageEnd, { passive: true });
+    const footerEnd = document.querySelector("footer > :last-child");
+    if (footerEnd) endObserver.observe(footerEnd);
     preference.addEventListener("change", onPreferenceChange);
     document.addEventListener("focusin", onFocus);
     return () => {
       observer.disconnect();
-      window.removeEventListener("scroll", revealAtPageEnd);
+      endObserver.disconnect();
       mutations.disconnect();
+      for (const animation of preparation.values()) animation.cancel();
       for (const animation of animations.values()) animation.cancel();
       preference.removeEventListener("change", onPreferenceChange);
       document.removeEventListener("focusin", onFocus);

@@ -1,15 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function CountUp({ value }: { value: string }) {
   const element = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(value);
+  const output = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const node = element.current;
     const match = value.match(/^(\d+)(.*)$/);
     if (!node || !match) return;
+    const text = output.current?.firstChild;
+    if (!text) return;
+    const setDisplay = (next: string) => {
+      if (text.nodeValue !== next) text.nodeValue = next;
+    };
     const target = Number(match[1]);
     const suffix = match[2];
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -49,6 +54,7 @@ export function CountUp({ value }: { value: string }) {
       observer.disconnect();
       cancelAnimationFrame(frame);
       preference.removeEventListener("change", onPreferenceChange);
+      setDisplay(value);
     };
   }, [value]);
 
@@ -56,7 +62,7 @@ export function CountUp({ value }: { value: string }) {
     <span ref={element} className="inline-grid tabular-nums">
       <span className="sr-only">{value}</span>
       <span aria-hidden="true" className="invisible col-start-1 row-start-1">{value}</span>
-      <span aria-hidden="true" className="col-start-1 row-start-1">{display}</span>
+      <span ref={output} aria-hidden="true" className="col-start-1 row-start-1">{value}</span>
     </span>
   );
 }
