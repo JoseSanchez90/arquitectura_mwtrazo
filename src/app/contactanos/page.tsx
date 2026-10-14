@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
@@ -17,12 +18,12 @@ export default function Contact() {
         />
         <div className="grid gap-14 lg:grid-cols-[1fr_2fr]">
           <aside>
-            <h2 className="mb-8 text-3xl font-semibold">Conversemos</h2>
+            <Reveal as="h2" className="mb-8 text-3xl font-semibold">Conversemos</Reveal>
             <div className="space-y-7 text-sm">
               <div>
-                <p className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
+                <Reveal as="p" className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
                   Ubicación
-                </p>
+                </Reveal>
                 <a
                   href={contact.map}
                   target="_blank"
@@ -33,9 +34,9 @@ export default function Contact() {
                 </a>
               </div>
               <div>
-                <p className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
+                <Reveal as="p" className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
                   Mensaje directo
-                </p>
+                </Reveal>
                 <a
                   href={contact.whatsapp}
                   target="_blank"
@@ -46,9 +47,9 @@ export default function Contact() {
                 </a>
               </div>
               <div>
-                <p className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
+                <Reveal as="p" className="mb-2 text-[11px] tracking-widest text-neutral-500 uppercase">
                   Correo electrónico
-                </p>
+                </Reveal>
                 <a
                   href={`mailto:${contact.email}`}
                   className="break-all hover:underline"
@@ -58,9 +59,9 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-10 border-t border-neutral-200 pt-8">
-              <h3 className="mb-5 text-sm font-semibold uppercase">
+              <Reveal as="h3" className="mb-5 text-sm font-semibold uppercase">
                 Nuestro compromiso
-              </h3>
+              </Reveal>
               <CheckList
                 items={[
                   "Garantía de devolución de 45 días",
@@ -78,19 +79,19 @@ export default function Contact() {
         </blockquote>
       </section>
       <section className="bg-neutral-100 w-full px-6 py-14 text-center flex flex-col items-center">
-        <p className="text-xs tracking-widest uppercase">
+        <Reveal as="p" className="text-xs tracking-widest uppercase">
           Lima y Callao · Perú
-        </p>
-        <h2 className="mt-5 text-2xl font-light uppercase">
+        </Reveal>
+        <Reveal as="h2" className="mt-5 text-2xl font-light uppercase">
           Cerca de ti y de tu propiedad
-        </h2>
+        </Reveal>
         <a
           className="group/arrow w-fit mt-6 flex justify-center items-center border-b border-neutral-500 gap-2 pb-1 text-xs uppercase"
           href={contact.map}
           target="_blank"
           rel="noreferrer"
         >
-          <p>Ver ubicación en Google Maps</p>{" "}
+          <Reveal as="p">Ver ubicación en Google Maps</Reveal>{" "}
           <SiGooglemaps className="w-4 h-4" />{" "}
           <AnimatedArrow direction="diagonal" />
         </a>

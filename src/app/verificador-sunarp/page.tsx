@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import {
@@ -28,33 +29,33 @@ export default function Verifier() {
             priority
           />
           <div>
-            <h2 className="mb-6 text-2xl">
+            <Reveal as="h2" className="mb-6 text-2xl">
               El nexo entre tu propiedad y la seguridad jurídica.
-            </h2>
-            <p className="mb-5 text-sm leading-7">
+            </Reveal>
+            <Reveal as="p" className="mb-5 text-sm leading-7">
               Contamos con profesionales autorizados para regularizar
               construcciones y gestionar trámites técnicos registrales bajo el
               amparo de la Ley 27157.
-            </p>
-            <h2 className="mt-8 mb-4 text-xl">
+            </Reveal>
+            <Reveal as="h2" className="mt-8 mb-4 text-xl">
               ¿Qué es un verificador SUNARP?
-            </h2>
-            <p className="mb-5 text-sm leading-7 text-neutral-600">
+            </Reveal>
+            <Reveal as="p" className="mb-5 text-sm leading-7 text-neutral-600">
               Es un profesional (arquitecto o ingeniero) especializado que
               cuenta con la autorización legal del Registro de Predios para
               validar la realidad física de un inmueble.
-            </p>
-            <p className="mb-5 text-sm leading-7 text-neutral-600">
+            </Reveal>
+            <Reveal as="p" className="mb-5 text-sm leading-7 text-neutral-600">
               A diferencia de una gestión municipal convencional, el verificador
               tiene la facultad de realizar saneamientos directos, permitiendo
               que construcciones que no cumplen con parámetros urbanísticos
               rígidos puedan ser inscritas legalmente.
-            </p>
-            <p className="text-sm leading-7 text-neutral-600">
+            </Reveal>
+            <Reveal as="p" className="text-sm leading-7 text-neutral-600">
               En MWTRAZO, nuestros verificadores asumen la responsabilidad
               técnica del expediente, garantizando que tu propiedad esté
               conforme a ley.
-            </p>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -68,8 +69,8 @@ export default function Verifier() {
             {verifierFunctions.map(([title, text], i) => (
               <article key={title} className="border border-white/25 p-8">
                 <Icon name={["building", "plan", "shield", "land"][i % 4]} />
-                <h3 className="mt-6 mb-4 text-lg uppercase">{title}</h3>
-                <p className="text-sm leading-7 text-neutral-400">{text}</p>
+                <Reveal as="h3" className="mt-6 mb-4 text-lg uppercase">{title}</Reveal>
+                <Reveal as="p" className="text-sm leading-7 text-neutral-400">{text}</Reveal>
               </article>
             ))}
           </div>
@@ -103,17 +104,17 @@ export default function Verifier() {
               <span className="text-4xl font-light text-neutral-400">
                 0{i + 1}
               </span>
-              <h3 className="mt-5 mb-4 text-base font-semibold uppercase">
+              <Reveal as="h3" className="mt-5 mb-4 text-base font-semibold uppercase">
                 {t}
-              </h3>
-              <p className="text-sm leading-7 text-neutral-600">{d}</p>
+              </Reveal>
+              <Reveal as="p" className="text-sm leading-7 text-neutral-600">{d}</Reveal>
             </div>
           ))}
         </div>
         <div className="mt-16 text-center">
-          <p className="mb-6 text-sm">
+          <Reveal as="p" className="mb-6 text-sm">
             Analizamos la situación de tu predio antes de cualquier compromiso.
-          </p>
+          </Reveal>
           <ButtonLink className="group/arrow" href={contact.whatsapp}>
             Solicitar evaluación gratuita <AnimatedArrow direction="diagonal" />
           </ButtonLink>

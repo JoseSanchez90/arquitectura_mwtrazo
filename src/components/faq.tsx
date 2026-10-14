@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { faq } from "@/lib/content";
 
 export function Faq() {
@@ -22,7 +23,7 @@ export function Faq() {
               <path d="m4 7 6 6 6-6" />
             </svg>
           </summary>
-          <p className="px-5 py-7 text-sm leading-7 sm:px-7">{f.answer}</p>
+          <Reveal as="p" className="px-5 py-7 text-sm leading-7 sm:px-7">{f.answer}</Reveal>
         </details>
       ))}
     </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import { useState } from "react";
 import Link from "next/link";
@@ -29,9 +30,9 @@ export function ProjectGallery() {
           </button>
         ))}
       </div>
-      <p className="sr-only" aria-live="polite">
+      <Reveal as="p" className="sr-only" aria-live="polite">
         {filtered.length} proyectos
-      </p>
+      </Reveal>
       <div className="grid gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((p) => (
           <Link
@@ -47,23 +48,23 @@ export function ProjectGallery() {
             />
             <div className="mt-5 flex items-start justify-between gap-3">
               <div>
-                <h2 className="text-[15px] leading-6">
+                <Reveal as="h2" className="text-[15px] leading-6">
                   Familia {p.family} · {p.location}
-                </h2>
-                <p className="mt-1 text-[10px] tracking-wider text-neutral-500 uppercase">
+                </Reveal>
+                <Reveal as="p" className="mt-1 text-[10px] tracking-wider text-neutral-500 uppercase">
                   {p.category} / {p.year}
-                </p>
+                </Reveal>
               </div>
               <AnimatedArrow direction="diagonal" className="size-5" />
             </div>
-            <p className="mt-3 text-xs leading-5 text-neutral-500">{p.title}</p>
+            <Reveal as="p" className="mt-3 text-xs leading-5 text-neutral-500">{p.title}</Reveal>
           </Link>
         ))}
       </div>
-      <p className="mt-10 text-[11px] text-neutral-500">
+      <Reveal as="p" className="mt-10 text-[11px] text-neutral-500">
         Fotografías referenciales. La información de los casos corresponde al
         registro de proyectos de MWTRAZO.
-      </p>
+      </Reveal>
     </>
   );
 }

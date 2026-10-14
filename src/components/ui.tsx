@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import Image from "next/image";
 import { CountUp } from "@/components/count-up";
 import Link from "next/link";
@@ -37,16 +38,15 @@ export function SectionTitle({
   as?: "h1" | "h2";
   className?: string;
 }) {
-  const Heading = as;
   return (
     <div className={`mb-14 md:mb-16 ${className}`}>
-      <p className="mb-7 flex items-center gap-4 text-sm font-bold uppercase sm:text-lg">
+      <Reveal as="p" className="mb-7 flex items-center gap-4 text-sm font-bold uppercase sm:text-lg">
         <span className="h-px w-10 shrink-0 bg-current sm:w-17.5" />
         {eyebrow}
-      </p>
-      <Heading className="max-w-185 text-[30px] leading-[1.13] font-normal uppercase sm:ml-21.5 sm:text-[42px] lg:text-5xl">
+      </Reveal>
+      <Reveal as={as} className="max-w-185 text-[30px] leading-[1.13] font-normal uppercase sm:ml-21.5 sm:text-[42px] lg:text-5xl">
         {title}
-      </Heading>
+      </Reveal>
     </div>
   );
 }
@@ -65,7 +65,7 @@ export function Photo({
   sizes?: string;
 }) {
   return (
-    <div data-reveal className={`relative overflow-hidden ${className}`}>
+    <Reveal className={`relative overflow-hidden ${className}`}>
       <Image
         src={src}
         alt={alt}
@@ -74,7 +74,7 @@ export function Photo({
         priority={priority}
         className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
-    </div>
+    </Reveal>
   );
 }
 
@@ -129,12 +129,12 @@ export function Stats() {
     <div className="grid grid-cols-2 gap-x-7 gap-y-10 border-y border-neutral-200 py-10 md:grid-cols-4">
       {stats.map(([n, t]) => (
         <div key={t}>
-          <p className="text-4xl font-light md:text-5xl">
+          <Reveal as="p" className="text-4xl font-light md:text-5xl">
             <CountUp value={n} />
-          </p>
-          <p className="mt-3 text-[10px] tracking-[.13em] uppercase sm:text-xs">
+          </Reveal>
+          <Reveal as="p" className="mt-3 text-[10px] tracking-[.13em] uppercase sm:text-xs">
             {t}
-          </p>
+          </Reveal>
         </div>
       ))}
     </div>
@@ -151,12 +151,12 @@ export function ServiceCards() {
           className="group flex flex-col border border-white/25 p-7 transition-colors hover:border-white hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-white"
         >
           <Icon name={s.icon} />
-          <h3 className="mt-7 mb-4 text-lg leading-7 uppercase">
+          <Reveal as="h3" className="mt-7 mb-4 text-lg leading-7 uppercase">
             {s.shortTitle}
-          </h3>
-          <p className="text-sm leading-relaxed text-neutral-400">
+          </Reveal>
+          <Reveal as="p" className="text-sm leading-relaxed text-neutral-400">
             {s.description}
-          </p>
+          </Reveal>
           <span className="mt-auto flex items-center gap-3 pt-7 text-xs uppercase tracking-wider text-white">
             Ver servicio{" "}
             <FaArrowRight
@@ -181,14 +181,14 @@ export function CallToAction() {
         className="-z-20 object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-black/20" />
-      <h2 className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px] text-white">
+      <Reveal as="h2" className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px] text-white">
         Inicia tu formalización hoy
-      </h2>
-      <p className="mx-auto mt-8 max-w-150 text-sm leading-relaxed text-white">
+      </Reveal>
+      <Reveal as="p" className="mx-auto mt-8 max-w-150 text-sm leading-relaxed text-white">
         Conversemos sobre tu caso. Revisamos toda tu documentación
         preventivamente para asegurar el éxito de tu trámite, con rapidez y
         total transparencia en cada paso.
-      </p>
+      </Reveal>
       <ButtonLink
         href="/contactanos"
         className="mt-12 text-white hover:bg-white hover:text-zinc-950"
@@ -209,15 +209,15 @@ export function Footer() {
           <Link href="/" className="text-2xl tracking-tight">
             MW<span className="font-semibold">TRAZO</span>
           </Link>
-          <p className="mt-5 max-w-xs text-xs leading-6 text-neutral-400">
+          <Reveal as="p" className="mt-5 max-w-xs text-xs leading-6 text-neutral-400">
             Especialistas en saneamiento físico legal y formalización predial.
             Seguridad jurídica para tu patrimonio.
-          </p>
+          </Reveal>
         </div>
         <div>
-          <p className="mb-5 text-xs font-semibold tracking-widest uppercase">
+          <Reveal as="p" className="mb-5 text-xs font-semibold tracking-widest uppercase">
             Empresa
-          </p>
+          </Reveal>
           <div className="flex flex-col gap-3 text-xs text-neutral-400">
             {[
               ["Nosotros", "/nosotros"],
@@ -232,9 +232,9 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="mb-5 text-xs font-semibold tracking-widest uppercase">
+          <Reveal as="p" className="mb-5 text-xs font-semibold tracking-widest uppercase">
             Servicios
-          </p>
+          </Reveal>
           <div className="flex flex-col gap-3 text-xs text-neutral-400">
             {services.map((s) => (
               <Link
@@ -248,9 +248,9 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="mb-5 text-xs font-semibold tracking-widest uppercase">
+          <Reveal as="p" className="mb-5 text-xs font-semibold tracking-widest uppercase">
             Contacto
-          </p>
+          </Reveal>
           <div className="flex flex-col gap-3 text-xs text-neutral-400">
             <a
               href={contact.map}
@@ -278,7 +278,7 @@ export function Footer() {
       <div
         className={`${container} flex flex-wrap items-center justify-between gap-4 border-t border-white/15 py-7 text-[11px] text-neutral-400`}
       >
-        <p>© 2021 MWTRAZO. Todos los derechos reservados.</p>
+        <Reveal as="p">© 2021 MWTRAZO. Todos los derechos reservados.</Reveal>
         <a
           href="#top"
           aria-label="Volver arriba"

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -44,15 +45,15 @@ export default async function Project({
               className="aspect-[1.25]"
               priority
             />
-            <p className="mt-3 text-[10px] text-neutral-500">
+            <Reveal as="p" className="mt-3 text-[10px] text-neutral-500">
               Fotografía referencial.
-            </p>
+            </Reveal>
           </div>
           <div>
-            <p className="mb-4 text-xs uppercase tracking-widest">
+            <Reveal as="p" className="mb-4 text-xs uppercase tracking-widest">
               {p.category} / {p.year}
-            </p>
-            <h1 className="text-3xl leading-tight uppercase">{p.title}</h1>
+            </Reveal>
+            <Reveal as="h1" className="text-3xl leading-tight uppercase">{p.title}</Reveal>
             <dl className="mt-8 space-y-5 border-y border-neutral-200 py-7">
               {[
                 ["Cliente", `Familia ${p.family}`],
@@ -66,13 +67,13 @@ export default async function Project({
                 </div>
               ))}
             </dl>
-            <h2 className="mt-7 text-xl">
+            <Reveal as="h2" className="mt-7 text-xl">
               ¿Tu propiedad necesita formalización?
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-neutral-600">
+            </Reveal>
+            <Reveal as="p" className="mt-4 text-sm leading-7 text-neutral-600">
               Evaluamos tu documentación y te acompañamos durante la gestión
               técnica y legal de tu inmueble.
-            </p>
+            </Reveal>
             <ButtonLink href={contact.whatsapp} className="mt-7">
               Consultar con un experto
             </ButtonLink>

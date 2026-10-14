@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import type { Metadata } from "next";
 import {
   ButtonLink,
@@ -19,12 +20,12 @@ export default function Services() {
           eyebrow="Nuestros servicios"
           title="Ingeniería legal para tu propiedad"
         />
-        <p className="mb-16 max-w-2xl text-sm leading-7 sm:ml-21.5">
+        <Reveal as="p" className="mb-16 max-w-2xl text-sm leading-7 sm:ml-21.5">
           Especialistas en el saneamiento físico legal de predios urbanos.
           Brindamos seguridad jurídica para que tu propiedad alcance su máximo
           potencial. Cada propiedad es única: analizamos tu caso a detalle para
           ofrecerte la ruta legal y técnica más rápida y segura.
-        </p>
+        </Reveal>
         <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
           {services.map((s, i) => (
             <article key={s.slug} className="group">
@@ -35,13 +36,13 @@ export default function Services() {
                 priority={i < 2}
               />
               <div className="px-2 pt-7 sm:px-6">
-                <p className="mb-3 text-[11px] tracking-widest text-neutral-500 uppercase">
+                <Reveal as="p" className="mb-3 text-[11px] tracking-widest text-neutral-500 uppercase">
                   0{i + 1} / {s.eyebrow}
-                </p>
-                <h2 className="text-2xl leading-tight uppercase">{s.title}</h2>
-                <p className="mt-5 text-sm leading-7 text-neutral-600">
+                </Reveal>
+                <Reveal as="h2" className="text-2xl leading-tight uppercase">{s.title}</Reveal>
+                <Reveal as="p" className="mt-5 text-sm leading-7 text-neutral-600">
                   {s.description}
-                </p>
+                </Reveal>
                 <ButtonLink href={`/servicios/${s.slug}`} className="mt-6">
                   Explorar servicio
                 </ButtonLink>
@@ -55,8 +56,8 @@ export default function Services() {
           {values.map((v) => (
             <div key={v.title}>
               <Icon name="shield" />
-              <h2 className="mt-6 mb-4 text-xl uppercase">{v.title}</h2>
-              <p className="text-sm leading-7 text-neutral-400">{v.text}</p>
+              <Reveal as="h2" className="mt-6 mb-4 text-xl uppercase">{v.title}</Reveal>
+              <Reveal as="p" className="text-sm leading-7 text-neutral-400">{v.text}</Reveal>
             </div>
           ))}
         </div>

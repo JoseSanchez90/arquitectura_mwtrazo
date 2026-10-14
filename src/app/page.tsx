@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import Link from "next/link";
 import { Hero } from "@/components/hero";
@@ -32,26 +33,26 @@ export default function Home() {
           />
         </div>
         <div>
-          <p className="mb-5 flex items-center gap-3 text-sm uppercase before:h-px before:w-12 before:bg-current">
+          <Reveal as="p" className="mb-5 flex items-center gap-3 text-sm uppercase before:h-px before:w-12 before:bg-current">
             Sobre nosotros
-          </p>
-          <h2 className="mb-6 text-[30px] leading-tight font-bold uppercase">
+          </Reveal>
+          <Reveal as="h2" className="mb-6 text-[30px] leading-tight font-bold uppercase">
             Tu patrimonio,
             <br />
             nuestro legado
-          </h2>
-          <p className="mb-5 text-sm leading-7">
+          </Reveal>
+          <Reveal as="p" className="mb-5 text-sm leading-7">
             En MWTRAZO somos especialistas en el saneamiento físico legal de
             predios urbanos y formalización predial. Nuestro objetivo es
             ayudarte a regularizar tu propiedad, brindándote la seguridad
             jurídica que tu familia y tu patrimonio merecen.
-          </p>
-          <p className="text-sm leading-7 text-neutral-600">
+          </Reveal>
+          <Reveal as="p" className="text-sm leading-7 text-neutral-600">
             Nos destacamos por nuestra estricta transparencia: todos los
             procesos son documentados, te entregamos el número de título de
             SUNARP para seguimiento directo, y te ofrecemos una garantía de
             devolución de dinero de hasta 45 días.
-          </p>
+          </Reveal>
           <ButtonLink href="/nosotros" className="mt-8">
             Conoce nuestra empresa
           </ButtonLink>
@@ -98,9 +99,9 @@ export default function Home() {
               className="aspect-[1.2] opacity-55 transition-opacity group-hover:opacity-85 sm:aspect-[.7]"
               sizes="(max-width: 640px) 100vw, 33vw"
             />
-            <h2 className="absolute right-6 bottom-9 left-6 max-w-62.5 text-lg leading-7 uppercase sm:bottom-10 sm:left-8">
+            <Reveal as="h2" className="absolute right-6 bottom-9 left-6 max-w-62.5 text-lg leading-7 uppercase sm:bottom-10 sm:left-8">
               {c.title}
-            </h2>
+            </Reveal>
           </Link>
         ))}
       </section>
@@ -124,16 +125,16 @@ export default function Home() {
                 />
               </Link>
               <div className="p-6">
-                <h3 className="text-lg leading-6 font-semibold uppercase">
+                <Reveal as="h3" className="text-lg leading-6 font-semibold uppercase">
                   {p.title}
-                </h3>
-                <p className="mt-2 text-xs text-neutral-500">
+                </Reveal>
+                <Reveal as="p" className="mt-2 text-xs text-neutral-500">
                   {p.location}, Lima · {p.year}
-                </p>
-                <p className="mt-6 text-sm leading-6">
+                </Reveal>
+                <Reveal as="p" className="mt-6 text-sm leading-6">
                   Cliente: Familia {p.family}. Un caso de nuestro historial de
                   formalización predial y saneamiento físico legal.
-                </p>
+                </Reveal>
                 <ButtonLink href={`/proyectos/${p.slug}`} className="mt-7">
                   Ver proyecto
                 </ButtonLink>

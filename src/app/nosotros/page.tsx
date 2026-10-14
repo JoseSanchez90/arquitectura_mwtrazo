@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import type { Metadata } from "next";
 import {
   ButtonLink,
@@ -29,21 +30,21 @@ export default function About() {
             priority
           />
           <div>
-            <h2 className="mb-6 text-2xl leading-snug font-normal">
+            <Reveal as="h2" className="mb-6 text-2xl leading-snug font-normal">
               Especialistas en saneamiento físico legal y formalización predial.
-            </h2>
-            <p className="text-sm leading-7">
+            </Reveal>
+            <Reveal as="p" className="text-sm leading-7">
               En MWTRAZO nacimos con la vocación de ordenar el crecimiento
               urbano y darte paz mental. Nuestro propósito no es solo entregar
               documentos: es ayudar a las familias a asegurar su futuro.
-            </p>
-            <p className="mt-5 text-sm leading-7 text-neutral-600">
+            </Reveal>
+            <Reveal as="p" className="mt-5 text-sm leading-7 text-neutral-600">
               Creemos que la formalidad es la base del desarrollo. Nuestro
               objetivo es ayudar a las personas y familias a regularizar
               legalmente sus propiedades, brindando seguridad jurídica y
               contribuyendo al desarrollo personal, familiar y profesional de
               cada uno de nuestros clientes.
-            </p>
+            </Reveal>
             <ButtonLink href="/verificador-sunarp" className="mt-8 ">
               Nuestros verificadores
             </ButtonLink>
@@ -65,8 +66,8 @@ export default function About() {
                 <Icon
                   name={i === 0 ? "plan" : i === 1 ? "shield" : "building"}
                 />
-                <h3 className="mt-7 mb-5 text-xl uppercase">{v.title}</h3>
-                <p className="text-sm leading-7 text-neutral-400">{v.text}</p>
+                <Reveal as="h3" className="mt-7 mb-5 text-xl uppercase">{v.title}</Reveal>
+                <Reveal as="p" className="text-sm leading-7 text-neutral-400">{v.text}</Reveal>
               </article>
             ))}
           </div>

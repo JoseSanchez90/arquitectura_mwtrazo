@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { contact, services } from "@/lib/content";
 import { FaWhatsapp } from "react-icons/fa";
-import { SmoothScroll } from "@/components/smooth-scroll";
 
 export function Header({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -43,7 +42,6 @@ export function Header({ children }: { children: React.ReactNode }) {
     pathname === href ? ("page" as const) : undefined;
   return (
     <div className="overflow-x-clip">
-      <SmoothScroll paused={open} />
       <header
         data-scrolled={scrolled}
         className={`fixed inset-x-0 top-0 z-30 text-white transition-[background-color,translate] duration-300 ease-in-out motion-reduce:transition-none ${scrolled ? "bg-black/75 backdrop-blur-sm" : pathname === "/" ? "bg-transparent" : "bg-black"} ${open ? "-translate-x-[min(320px,90vw)]" : "translate-x-0"}`}
@@ -82,7 +80,6 @@ export function Header({ children }: { children: React.ReactNode }) {
       <dialog
         ref={dialog}
         id="navigation-drawer"
-        data-lenis-prevent
         aria-label="Menú principal"
         onCancel={close}
         onClick={(e) => {

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -53,32 +54,32 @@ export default async function ServicePage({
               className="aspect-[1.65]"
               priority
             />
-            <p className="mt-8 text-xs tracking-widest text-neutral-500 uppercase">
+            <Reveal as="p" className="mt-8 text-xs tracking-widest text-neutral-500 uppercase">
               {s.eyebrow}
-            </p>
-            <h1 className="mt-4 text-[30px] leading-tight font-normal uppercase sm:text-[40px]">
+            </Reveal>
+            <Reveal as="h1" className="mt-4 text-[30px] leading-tight font-normal uppercase sm:text-[40px]">
               {s.title}
-            </h1>
-            <p className="mt-6 border-b border-neutral-200 pb-8 text-lg leading-8">
+            </Reveal>
+            <Reveal as="p" className="mt-6 border-b border-neutral-200 pb-8 text-lg leading-8">
               {s.description}
-            </p>
-            <h2 className="mt-10 mb-5 text-2xl font-medium">{s.question}</h2>
+            </Reveal>
+            <Reveal as="h2" className="mt-10 mb-5 text-2xl font-medium">{s.question}</Reveal>
             {s.paragraphs.map((p) => (
-              <p key={p} className="mb-5 text-sm leading-7 text-neutral-600">
+              <Reveal as="p" key={p} className="mb-5 text-sm leading-7 text-neutral-600">
                 {p}
-              </p>
+              </Reveal>
             ))}
             {s.includes && (
               <section className="mt-12">
-                <h2 className="mb-6 text-2xl">
+                <Reveal as="h2" className="mb-6 text-2xl">
                   ¿Qué incluye nuestro servicio integral?
-                </h2>
+                </Reveal>
                 <CheckList items={s.includes} />
               </section>
             )}
             {slug === "subdivision" && (
               <section className="mt-12">
-                <h2 className="mb-7 text-2xl uppercase">Rutas de gestión</h2>
+                <Reveal as="h2" className="mb-7 text-2xl uppercase">Rutas de gestión</Reveal>
                 <div className="grid gap-5 sm:grid-cols-2">
                   {[
                     {
@@ -107,7 +108,7 @@ export default async function ServicePage({
                       key={r.title}
                       className="border border-neutral-200 p-6"
                     >
-                      <h3 className="mb-5 font-semibold">{r.title}</h3>
+                      <Reveal as="h3" className="mb-5 font-semibold">{r.title}</Reveal>
                       <CheckList items={r.items} />
                     </div>
                   ))}
@@ -116,27 +117,27 @@ export default async function ServicePage({
             )}
             {s.requirements && (
               <section className="mt-12">
-                <h2 className="mb-6 text-2xl">
+                <Reveal as="h2" className="mb-6 text-2xl">
                   {slug === "subdivision"
                     ? "Documentación técnica requerida"
                     : "Requisitos principales"}
-                </h2>
-                <p className="mb-6 text-sm leading-7 text-neutral-600">
+                </Reveal>
+                <Reveal as="p" className="mb-6 text-sm leading-7 text-neutral-600">
                   Nuestros verificadores evaluarán la documentación de tu
                   propiedad para definir el trámite correspondiente.
-                </p>
+                </Reveal>
                 <div className="grid gap-5 sm:grid-cols-2">
                   {s.requirements.map(([title, text]) => (
                     <div
                       className="border-t border-neutral-300 pt-5"
                       key={title}
                     >
-                      <h3 className="text-sm font-semibold uppercase">
+                      <Reveal as="h3" className="text-sm font-semibold uppercase">
                         {title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-neutral-600">
+                      </Reveal>
+                      <Reveal as="p" className="mt-2 text-sm leading-6 text-neutral-600">
                         {text}
-                      </p>
+                      </Reveal>
                     </div>
                   ))}
                 </div>
@@ -144,16 +145,16 @@ export default async function ServicePage({
             )}
             {s.closing && (
               <section className="mt-12 border-l-2 border-black bg-neutral-50 p-7">
-                <h2 className="mb-4 text-xl">{s.closing.title}</h2>
-                <p className="text-sm leading-7">{s.closing.text}</p>
+                <Reveal as="h2" className="mb-4 text-xl">{s.closing.title}</Reveal>
+                <Reveal as="p" className="text-sm leading-7">{s.closing.text}</Reveal>
               </section>
             )}
           </article>
           <aside className="space-y-10">
             <div className="border border-neutral-200 p-7">
-              <h2 className="mb-7 text-lg font-semibold uppercase">
+              <Reveal as="h2" className="mb-7 text-lg font-semibold uppercase">
                 Beneficios clave
-              </h2>
+              </Reveal>
               <CheckList items={s.benefits} />
               <ButtonLink
                 href={`${contact.whatsapp}?text=${encodeURIComponent(`Hola, quisiera consultar sobre ${s.title.toLowerCase()}.`)}`}
@@ -163,9 +164,9 @@ export default async function ServicePage({
               </ButtonLink>
             </div>
             <div>
-              <h2 className="mb-5 text-lg font-semibold uppercase">
+              <Reveal as="h2" className="mb-5 text-lg font-semibold uppercase">
                 Nuestros servicios
-              </h2>
+              </Reveal>
               {services.map((other) => (
                 <Link
                   key={other.slug}
@@ -179,15 +180,15 @@ export default async function ServicePage({
               ))}
             </div>
             <div className="bg-black p-7 text-white">
-              <h2 className="mb-4 text-xl uppercase">
+              <Reveal as="h2" className="mb-4 text-xl uppercase">
                 Tu propiedad,
                 <br />
                 nuestra experiencia
-              </h2>
-              <p className="text-sm leading-7 text-neutral-400">
+              </Reveal>
+              <Reveal as="p" className="text-sm leading-7 text-neutral-400">
                 Profesionales inscritos en SUNARP. Gestión técnica y legal con
                 total transparencia.
-              </p>
+              </Reveal>
               <Link
                 href="/verificador-sunarp"
                 className="group/arrow mt-7 inline-block border-b pb-2 text-xs uppercase"
@@ -214,14 +215,14 @@ export default async function ServicePage({
                 key={name}
                 className={`border p-10 text-center ${i === 1 ? "border-[#159dc6] bg-[#159dc6] text-white" : "border-neutral-300"}`}
               >
-                <h3 className="text-sm font-bold uppercase">Plan {name}</h3>
-                <p className="my-7 text-5xl font-semibold">S/. {price}</p>
-                <p className="text-sm">por m² de área techada</p>
+                <Reveal as="h3" className="text-sm font-bold uppercase">Plan {name}</Reveal>
+                <Reveal as="p" className="my-7 text-5xl font-semibold">S/. {price}</Reveal>
+                <Reveal as="p" className="text-sm">por m² de área techada</Reveal>
                 <div className="my-8 h-px bg-current opacity-20" />
-                <p className="text-sm leading-7">
+                <Reveal as="p" className="text-sm leading-7">
                   Consulta el alcance del plan para tu inmueble con nuestros
                   especialistas.
-                </p>
+                </Reveal>
                 <ButtonLink
                   href={`${contact.whatsapp}?text=${encodeURIComponent(`Hola, quiero cotizar el plan ${name} de independización a S/. ${price} por m².`)}`}
                   className="mt-8"
@@ -231,10 +232,10 @@ export default async function ServicePage({
               </article>
             ))}
           </div>
-          <p className="mt-7 text-center text-xs text-neutral-500">
+          <Reveal as="p" className="mt-7 text-center text-xs text-neutral-500">
             Facilidades de pago en cuotas sin intereses. Confirma el alcance y
             la cotización de tu caso con el equipo.
-          </p>
+          </Reveal>
         </section>
       )}
       <CallToAction />

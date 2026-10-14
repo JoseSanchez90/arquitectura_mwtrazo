@@ -1,5 +1,6 @@
 "use client";
 
+import { Reveal } from "@/components/reveal";
 import { AnimatedArrow } from "@/components/animated-arrow";
 import { useState } from "react";
 import { contact, services } from "@/lib/content";
@@ -21,13 +22,13 @@ export function ContactForm() {
       }}
       className="space-y-6"
     >
-      <h2 className="text-2xl font-semibold uppercase">
+      <Reveal as="h2" className="text-2xl font-semibold uppercase">
         Solicitar evaluación gratuita
-      </h2>
-      <p className="text-sm leading-6 text-neutral-500">
+      </Reveal>
+      <Reveal as="p" className="text-sm leading-6 text-neutral-500">
         Cuéntanos sobre tu inmueble. Prepararemos tu consulta para continuar por
         WhatsApp.
-      </p>
+      </Reveal>
       <label className="block text-sm">
         Nombre completo *
         <input
@@ -84,11 +85,11 @@ export function ContactForm() {
           role="status"
           className="border border-neutral-300 bg-neutral-50 p-6"
         >
-          <p className="font-medium">Tu consulta está lista</p>
-          <p className="mt-2 text-sm leading-6 text-neutral-600">
+          <Reveal as="p" className="font-medium">Tu consulta está lista</Reveal>
+          <Reveal as="p" className="mt-2 text-sm leading-6 text-neutral-600">
             Revisa el mensaje y abre WhatsApp para enviarlo a MWTRAZO.
-          </p>
-          <p className="mt-4 whitespace-pre-line text-sm leading-6">{draft}</p>
+          </Reveal>
+          <Reveal as="p" className="mt-4 whitespace-pre-line text-sm leading-6">{draft}</Reveal>
           <a
             href={`${contact.whatsapp}?text=${encodeURIComponent(draft)}`}
             target="_blank"
