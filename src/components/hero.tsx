@@ -83,7 +83,7 @@ export function Hero() {
               priority={i === 0}
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/65" />
           </div>
         ))}
       </div>
