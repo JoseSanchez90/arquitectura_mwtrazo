@@ -62,8 +62,9 @@ export function ProjectGallery() {
         ))}
       </div>
       <Reveal as="p" className="mt-10 text-[11px] text-neutral-500">
-        Fotografías referenciales. La información de los casos corresponde al
-        registro de proyectos de MWTRAZO.
+        Imágenes generadas con IA e inspiradas en viviendas de Lima. Ilustran
+        nuestros servicios; no muestran los inmuebles de los clientes ni obras
+        construidas por MW Trazo.
       </Reveal>
     </>
   );

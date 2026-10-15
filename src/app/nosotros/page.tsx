@@ -24,8 +24,8 @@ export default function About() {
         />
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
           <Photo
-            src="/images/office.jpg"
-            alt="Espacios de trabajo y arquitectura"
+            src="/images/lima/equipo-oficina.webp"
+            alt="Oficina de arquitectura y formalización predial, imagen referencial generada con IA"
             className="aspect-[1.1]"
             priority
           />

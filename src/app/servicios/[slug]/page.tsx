@@ -51,7 +51,7 @@ export default async function ServicePage({
             <Photo
               src={s.image}
               alt={s.title}
-              className="aspect-[1.65]"
+              className="aspect-square"
               priority
             />
             <Reveal as="p" className="mt-8 text-xs tracking-widest text-neutral-500 uppercase">

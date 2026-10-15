@@ -2,7 +2,7 @@ import { Reveal } from "@/components/reveal";
 import Image from "next/image";
 import { CountUp } from "@/components/count-up";
 import Link from "next/link";
-import { CircleArrowUp } from "lucide-react";
+import { BackToTop, HomeLink } from "./scroll-to-top";
 import { contact, services, stats } from "@/lib/content";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 
@@ -174,13 +174,13 @@ export function CallToAction() {
   return (
     <section className="relative isolate overflow-hidden bg-neutral-800 px-6 py-24 text-center md:py-32">
       <Image
-        src="/images/contact-background.jpg"
+        src="/images/lima/contacto-lima.webp"
         alt=""
         fill
         sizes="100vw"
         className="-z-20 object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-black/20" />
+      <div className="absolute inset-0 -z-10 bg-black/65" />
       <Reveal as="h2" className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px] text-white">
         Inicia tu formalización hoy
       </Reveal>
@@ -206,9 +206,9 @@ export function Footer() {
         className={`${container} grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1.3fr_1fr]`}
       >
         <div>
-          <Link href="/" className="text-2xl tracking-tight">
+          <HomeLink className="text-2xl tracking-tight">
             MW<span className="font-semibold">TRAZO</span>
-          </Link>
+          </HomeLink>
           <Reveal as="p" className="mt-5 max-w-xs text-xs leading-6 text-neutral-400">
             Especialistas en saneamiento físico legal y formalización predial.
             Seguridad jurídica para tu patrimonio.
@@ -278,15 +278,15 @@ export function Footer() {
       <div
         className={`${container} flex flex-wrap items-center justify-between gap-4 border-t border-white/15 py-7 text-[11px] text-neutral-400`}
       >
-        <Reveal as="p">© 2021 MWTRAZO. Todos los derechos reservados.</Reveal>
-        <a
-          href="#top"
-          aria-label="Volver arriba"
-          title="Volver arriba"
-          className="inline-flex size-11 items-center justify-center rounded-full transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-        >
-          <CircleArrowUp size={32} strokeWidth={1.5} aria-hidden="true" />
-        </a>
+        <div>
+          <Reveal as="p">© 2021 MWTRAZO. Todos los derechos reservados.</Reveal>
+          <p className="mt-2 max-w-2xl text-[10px] leading-5 text-neutral-500">
+            Imágenes de inmuebles generadas con IA e inspiradas en Lima, de uso
+            referencial. MW Trazo brinda servicios de saneamiento físico legal
+            y formalización predial.
+          </p>
+        </div>
+        <BackToTop />
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ import {
   SectionTitle,
   ServiceCards,
 } from "@/components/ui";
-import { projects } from "@/lib/content";
+import { projects, services } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -22,13 +22,13 @@ export default function Home() {
       >
         <div className="grid grid-cols-2 gap-5 sm:gap-7">
           <Photo
-            src="/images/about-building.jpg"
-            alt="Arquitectura de edificios"
+            src="/images/lima/nosotros-ciudad.webp"
+            alt="Imagen referencial generada de un edificio residencial de Lima"
             className="aspect-[.52] grayscale"
           />
           <Photo
-            src="/images/about-interior.jpg"
-            alt="Diseño de espacios y arquitectura interior"
+            src="/images/lima/nosotros-barrio.webp"
+            alt="Imagen referencial generada de una calle residencial inspirada en Barranco, Lima"
             className="mt-16 aspect-[.52] grayscale"
           />
         </div>
@@ -68,35 +68,20 @@ export default function Home() {
         </div>
       </section>
       <section
+        id="especialidades"
         aria-label="Especialidades"
         className="grid grid-cols-1 sm:grid-cols-3"
       >
-        {[
-          {
-            image: "/images/portfolio-buildings.jpg",
-            title: "Declaratoria de fábrica",
-            href: "/servicios/declaratoria-de-fabrica",
-          },
-          {
-            image: "/images/portfolio-house.jpg",
-            title: "Independización de inmuebles",
-            href: "/servicios/independizacion",
-          },
-          {
-            image: "/images/portfolio-interior.jpg",
-            title: "Subdivisión de predios",
-            href: "/servicios/subdivision",
-          },
-        ].map((c) => (
+        {services.slice(0, 3).map((c) => (
           <Link
-            key={c.href}
-            href={c.href}
+            key={c.slug}
+            href={`/servicios/${c.slug}`}
             className="group relative block overflow-hidden bg-black text-white"
           >
             <Photo
               src={c.image}
               alt={c.title}
-              className="aspect-[1.2] opacity-55 transition-opacity group-hover:opacity-85 sm:aspect-[.7]"
+              className="aspect-square opacity-70 transition-opacity group-hover:opacity-90 sm:aspect-[.7]"
               sizes="(max-width: 640px) 100vw, 33vw"
             />
             <Reveal as="h2" className="absolute right-6 bottom-9 left-6 max-w-62.5 text-lg leading-7 uppercase sm:bottom-10 sm:left-8">
@@ -107,9 +92,14 @@ export default function Home() {
       </section>
       <section className={`${container} py-20 md:py-28`}>
         <SectionTitle
-          eyebrow="Casos de éxito"
+          eyebrow="Casos de formalización"
           title="Propiedades con un nuevo futuro"
         />
+        <p className="mb-8 max-w-2xl text-xs leading-6 text-neutral-500">
+          Casos de servicios de saneamiento físico legal. Las imágenes son
+          referenciales, generadas con IA; no corresponden a los inmuebles de
+          los clientes ni a obras construidas por MW Trazo.
+        </p>
         <div className="grid gap-10 md:grid-cols-3">
           {[projects[0], projects[1], projects[5]].map((p) => (
             <article key={p.slug} className="group">
@@ -119,7 +109,7 @@ export default function Home() {
               >
                 <Photo
                   src={p.image}
-                  alt={`Imagen referencial de vivienda en ${p.location}`}
+                  alt={`Vivienda limeña generada como referencia para el servicio de ${p.title.toLowerCase()}`}
                   className="aspect-[1.5]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
@@ -136,7 +126,7 @@ export default function Home() {
                   formalización predial y saneamiento físico legal.
                 </Reveal>
                 <ButtonLink href={`/proyectos/${p.slug}`} className="mt-7">
-                  Ver proyecto
+                  Ver caso
                 </ButtonLink>
               </div>
             </article>
@@ -147,7 +137,7 @@ export default function Home() {
             href="/proyectos"
             className="group/arrow border-b border-neutral-400 pb-2 text-xs tracking-wider uppercase"
           >
-            Ver todos los proyectos <AnimatedArrow />
+            Ver todos los casos <AnimatedArrow />
           </Link>
         </div>
       </section>

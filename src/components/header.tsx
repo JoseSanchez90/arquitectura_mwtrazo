@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { HomeLink } from "./scroll-to-top";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -49,13 +50,11 @@ export function Header({ children }: { children: React.ReactNode }) {
         <div
           className={`mx-auto flex max-w-300 items-center justify-between px-6 transition-[height] duration-300 ease-in-out motion-reduce:transition-none sm:px-10 xl:px-7.5 ${scrolled ? "h-17.5" : "h-25 sm:h-30.5"}`}
         >
-          <Link
-            href="/"
-            aria-label="MW Trazo — Inicio"
+          <HomeLink
             className="text-[25px] font-normal tracking-tight"
           >
             MW<span className="font-semibold">TRAZO</span>
-          </Link>
+          </HomeLink>
           <button
             ref={trigger}
             onClick={show}

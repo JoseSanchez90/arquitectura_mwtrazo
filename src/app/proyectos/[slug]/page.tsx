@@ -35,7 +35,7 @@ export default async function Project({
           href="/proyectos"
           className="group/arrow mb-8 inline-block text-xs tracking-wide uppercase"
         >
-          <AnimatedArrow direction="left" /> Todos los proyectos
+          <AnimatedArrow direction="left" /> Todos los casos
         </Link>
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
           <div>
@@ -46,7 +46,8 @@ export default async function Project({
               priority
             />
             <Reveal as="p" className="mt-3 text-[10px] text-neutral-500">
-              Fotografía referencial.
+              Imagen generada con IA, inspirada en viviendas de Lima. No es una
+              fotografía del inmueble del cliente ni una obra construida por MW Trazo.
             </Reveal>
           </div>
           <div>
@@ -59,7 +60,7 @@ export default async function Project({
                 ["Cliente", `Familia ${p.family}`],
                 ["Ubicación", `${p.location}, Lima`],
                 ["Año", p.year],
-                ["Tipo de proyecto", p.category],
+                ["Tipo de caso", p.category],
               ].map(([k, v]) => (
                 <div key={k}>
                   <dt className="text-xs text-neutral-500 uppercase">{k}</dt>

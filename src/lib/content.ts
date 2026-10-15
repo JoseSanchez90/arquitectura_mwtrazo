@@ -8,7 +8,7 @@ export const contact = {
 
 export const stats = [
   ["6+", "Años de experiencia"],
-  ["250+", "Proyectos completados"],
+  ["250+", "Servicios completados"],
   ["8", "Profesionales asociados"],
   ["215k+", "M² regularizados"],
 ];
@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: "Declaratoria de fábrica",
     shortTitle: "Declaratoria de fábrica",
     eyebrow: "Legalización de edificaciones",
-    image: "/images/article-house.jpg",
+    image: "/images/lima/servicio-declaratoria.webp",
     icon: "building",
     description:
       "Formaliza legalmente tu construcción, evita multas municipales e incrementa el valor de tu inmueble en el mercado inmobiliario.",
@@ -81,7 +81,7 @@ export const services: Service[] = [
     title: "Independización de inmuebles",
     shortTitle: "Independización SUNARP",
     eyebrow: "Fragmentación registral",
-    image: "/images/hero-buildings.jpg",
+    image: "/images/lima/servicio-independizacion.webp",
     icon: "plan",
     description:
       "Divide legalmente tu edificación en unidades independientes (departamentos, pisos o locales) y obtén una partida registral propia para cada área.",
@@ -120,7 +120,7 @@ export const services: Service[] = [
     title: "Subdivisión de predios",
     shortTitle: "Subdivisión de predios",
     eyebrow: "Partición de suelos urbanos",
-    image: "/images/portfolio-house.jpg",
+    image: "/images/lima/servicio-subdivision.webp",
     icon: "land",
     description:
       "Divide un terreno matriz en varios sublotes independientes, cada uno con su propia partida electrónica ante SUNARP.",
@@ -147,7 +147,7 @@ export const services: Service[] = [
     title: "Levantamiento de cargas técnicas",
     shortTitle: "Levantamiento de cargas",
     eyebrow: "Saneamiento de títulos",
-    image: "/images/article-building.jpg",
+    image: "/images/lima/servicio-cargas.webp",
     icon: "shield",
     description:
       "Elimina restricciones técnicas registrales para facilitar ventas o hipotecas y regularizar completamente tu propiedad.",
@@ -195,7 +195,7 @@ export const projects = [
     location: "Surco",
     category: "Residencial",
     title: "Declaratoria de fábrica e independización",
-    image: "/images/project-quintana.jpg",
+    image: "/images/lima/surco.webp",
   },
   {
     slug: "familia-melendez",
@@ -203,7 +203,7 @@ export const projects = [
     location: "Chorrillos",
     category: "Ampliación",
     title: "Ampliación de fábrica e independización",
-    image: "/images/project-melendez.jpg",
+    image: "/images/lima/los-olivos.webp",
   },
   {
     slug: "familia-almeida",
@@ -211,7 +211,7 @@ export const projects = [
     location: "Callao",
     category: "Residencial",
     title: "Declaratoria de fábrica e independización",
-    image: "/images/project-almeida.jpg",
+    image: "/images/lima/surquillo.webp",
   },
   {
     slug: "familia-cespedes",
@@ -219,7 +219,7 @@ export const projects = [
     location: "Rímac",
     category: "Residencial",
     title: "Declaratoria de fábrica e independización",
-    image: "/images/portfolio-house.jpg",
+    image: "/images/lima/barranco.webp",
   },
   {
     slug: "familia-medano",
@@ -227,7 +227,7 @@ export const projects = [
     location: "Lince",
     category: "Residencial",
     title: "Declaratoria de fábrica e independización",
-    image: "/images/hero-buildings.jpg",
+    image: "/images/lima/lince.webp",
   },
   {
     slug: "familia-tapia",
@@ -235,7 +235,7 @@ export const projects = [
     location: "La Molina",
     category: "Técnico",
     title: "Declaratoria de fábrica",
-    image: "/images/project-tapia.jpg",
+    image: "/images/lima/san-isidro.webp",
   },
   {
     slug: "familia-rojas",
@@ -243,7 +243,7 @@ export const projects = [
     location: "Surco",
     category: "Técnico",
     title: "Declaratoria de fábrica",
-    image: "/images/article-house.jpg",
+    image: "/images/lima/jesus-maria.webp",
   },
   {
     slug: "familia-ramirez",
@@ -251,7 +251,7 @@ export const projects = [
     location: "Ancón",
     category: "Residencial",
     title: "Declaratoria de fábrica e independización",
-    image: "/images/hero-house.jpg",
+    image: "/images/lima/ancon.webp",
   },
   {
     slug: "familia-silva",
@@ -259,7 +259,7 @@ export const projects = [
     location: "Carabayllo",
     category: "Residencial",
     title: "Declaratoria de fábrica",
-    image: "/images/project-melendez.jpg",
+    image: "/images/lima/carabayllo.webp",
   },
   {
     slug: "familia-navarro",
@@ -267,7 +267,7 @@ export const projects = [
     location: "San Miguel",
     category: "Residencial",
     title: "Declaratoria de fábrica",
-    image: "/images/project-quintana.jpg",
+    image: "/images/lima/san-miguel.webp",
   },
   {
     slug: "familia-esteban",
@@ -275,7 +275,7 @@ export const projects = [
     location: "Lurigancho",
     category: "Residencial",
     title: "Declaratoria de fábrica e independización",
-    image: "/images/project-almeida.jpg",
+    image: "/images/lima/lurigancho.webp",
   },
   {
     slug: "familia-quintanilla",
@@ -283,7 +283,7 @@ export const projects = [
     location: "Miraflores",
     category: "Residencial",
     title: "Declaratoria de fábrica",
-    image: "/images/project-tapia.jpg",
+    image: "/images/lima/miraflores.webp",
   },
 ].map((p) => ({ ...p, year: "2023" }));
 

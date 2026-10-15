@@ -7,28 +7,28 @@ import { Pause, Play } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero-house.jpg",
+    image: "/images/lima/portada-lima.webp",
     eyebrow: "Saneamiento físico legal",
     title: "Seguridad jurídica para tu propiedad",
     href: "/servicios",
     cta: "Nuestros servicios",
   },
   {
-    image: "/images/hero-buildings.jpg",
+    image: "/images/lima/portada-departamentos.webp",
     eyebrow: "Independización SUNARP",
     title: "Cada espacio, un futuro independiente",
     href: "/servicios/independizacion",
     cta: "Conoce el servicio",
   },
   {
-    image: "/images/hero-commercial.jpg",
+    image: "/images/lima/portada-patrimonio.webp",
     eyebrow: "Formalización predial",
     title: "Tu patrimonio en manos de expertos",
     href: "/proyectos",
-    cta: "Nuestros proyectos",
+    cta: "Casos de formalización",
   },
   {
-    image: "/images/hero-interior.jpg",
+    image: "/images/lima/portada-verificacion.webp",
     eyebrow: "Verificadores acreditados",
     title: "Tu tranquilidad comienza aquí",
     href: "/verificador-sunarp",
@@ -77,13 +77,13 @@ export function Hero() {
           >
             <Image
               src={s.image}
-              alt="Arquitectura residencial y espacios contemporáneos"
+              alt="Imagen referencial generada de una vivienda urbana inspirada en Lima, Perú"
               fill
               sizes="100vw"
               priority={i === 0}
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
       </div>

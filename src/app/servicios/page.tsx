@@ -32,7 +32,7 @@ export default function Services() {
               <Photo
                 src={s.image}
                 alt={s.shortTitle}
-                className="aspect-[1.55]"
+                className="aspect-square"
                 priority={i < 2}
               />
               <div className="px-2 pt-7 sm:px-6">

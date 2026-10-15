@@ -10,13 +10,14 @@ export default function Projects() {
       <section className={`${container} pt-16 pb-24`}>
         <SectionTitle
           as="h1"
-          eyebrow="Nuestros proyectos"
+          eyebrow="Servicios realizados"
           title="Conoce nuestros casos de éxito"
         />
         <Reveal as="p" className="mb-14 max-w-2xl text-sm leading-7 sm:ml-21.5">
           Explora nuestro historial de formalización predial. Más de 250
-          proyectos completados respaldan nuestra capacidad técnica para
-          resolver los casos más complejos ante SUNARP.
+          servicios completados respaldan nuestra capacidad técnica para
+          gestionar trámites ante SUNARP. Estos casos corresponden a saneamiento
+          físico legal, no a obras de construcción de MW Trazo.
         </Reveal>
         <ProjectGallery />
         <div className="mt-20">
