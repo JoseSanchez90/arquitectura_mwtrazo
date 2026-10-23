@@ -59,7 +59,7 @@ export function Hero() {
     <section
       aria-label="Presentación de MW Trazo"
       aria-roledescription="carrusel"
-      className="relative bg-black text-white"
+      className="relative flex h-dvh w-full flex-col justify-center bg-black text-white"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)}
@@ -68,7 +68,7 @@ export function Hero() {
           setFocused(false);
       }}
     >
-      <div className="relative h-65 sm:h-130 lg:h-[50vw] lg:max-h-240 lg:min-h-150">
+      <div className="absolute inset-0">
         {slides.map((s, i) => (
           <div
             key={s.image}
@@ -87,23 +87,23 @@ export function Hero() {
           </div>
         ))}
       </div>
-      <div className="relative mx-auto max-w-300 px-6 pt-7 pb-20 sm:absolute sm:inset-x-0 sm:top-[30%] sm:px-3.75 sm:pt-3.75 sm:pb-0">
-        <div className="w-full max-w-147.5">
-          <p className="mb-7 text-xs uppercase sm:mb-8 sm:text-lg">
+      <div className="relative mx-auto w-full max-w-300 px-6 pt-25 pb-24 sm:px-3.75 sm:pt-30.5 sm:pb-24 [@media(max-height:500px)]:pt-20 [@media(max-height:500px)]:pb-16">
+        <div className="w-full max-w-147.5 sm:pr-20 lg:pr-0">
+          <p className="mb-7 text-xs uppercase sm:mb-8 sm:text-lg [@media(max-height:500px)]:mb-3 [@media(max-height:500px)]:text-xs">
             {slides[active].eyebrow}
           </p>
-          <h1 className="max-w-147.5 text-[32px] leading-[1.12] font-normal uppercase sm:text-[42px] lg:text-[48px]">
+          <h1 className="max-w-147.5 text-[32px] leading-[1.12] font-normal uppercase sm:text-[42px] lg:text-[48px] [@media(max-height:500px)]:text-2xl">
             {slides[active].title}
           </h1>
           <Link
             href={slides[active].href}
-            className="mt-8 inline-flex min-h-13 items-center border-2 border-white/60 px-6 py-3 text-xs uppercase transition-colors hover:bg-white hover:text-black sm:text-lg lg:mt-9"
+            className="mt-8 inline-flex min-h-13 items-center border-2 border-white/60 px-6 py-3 text-xs uppercase transition-colors hover:bg-white hover:text-black sm:text-lg lg:mt-9 [@media(max-height:500px)]:mt-4 [@media(max-height:500px)]:min-h-11 [@media(max-height:500px)]:py-2 [@media(max-height:500px)]:text-xs"
           >
             {slides[active].cta}
           </Link>
         </div>
       </div>
-      <div className="absolute top-35.5 right-5 flex w-10 flex-col sm:top-[40%] sm:right-[max(40px,calc((100%-1200px)/2+40px))] sm:w-15">
+      <div className="absolute bottom-6 left-6 flex gap-3 sm:top-1/2 sm:right-[max(40px,calc((100%-1200px)/2+40px))] sm:bottom-auto sm:left-auto sm:w-15 sm:-translate-y-1/2 sm:flex-col sm:gap-0">
         {slides.map((s, i) => (
           <button
             key={s.image}
@@ -113,7 +113,7 @@ export function Hero() {
             }}
             aria-label={`Diapositiva ${i + 1}: ${s.eyebrow}`}
             aria-pressed={active === i}
-            className={`h-10 cursor-pointer border-t text-right text-[13px] transition-colors sm:h-11 ${active === i ? "border-white text-white" : "border-white/25 text-white/45 hover:text-white"}`}
+            className={`h-11 w-10 cursor-pointer border-t text-right text-[13px] transition-colors sm:w-full ${active === i ? "border-white text-white" : "border-white/25 text-white/45 hover:text-white"}`}
           >
             0{i + 1}
           </button>
@@ -123,7 +123,7 @@ export function Hero() {
         onClick={() => setPaused((value) => !value)}
         aria-label={paused ? "Reanudar presentación" : "Pausar presentación"}
         title={paused ? "Reanudar presentación" : "Pausar presentación"}
-        className="absolute right-6 bottom-12 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-white/35 bg-white/10 text-white backdrop-blur-sm transition-colors hover:border-white/70 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:bg-white/30"
+        className="absolute right-6 bottom-6 inline-flex size-11 cursor-pointer items-center justify-center rounded-full border border-white/35 bg-white/10 text-white backdrop-blur-sm transition-colors hover:border-white/70 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white active:bg-white/30"
       >
         {paused ? (
           <Play
