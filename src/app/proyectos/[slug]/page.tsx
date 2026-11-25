@@ -45,16 +45,14 @@ export default async function Project({
               className="aspect-[1.25]"
               priority
             />
-            <Reveal as="p" className="mt-3 text-[10px] text-neutral-500">
-              Imagen generada con IA, inspirada en viviendas de Lima. No es una
-              fotografía del inmueble del cliente ni una obra construida por MW Trazo.
-            </Reveal>
           </div>
           <div>
             <Reveal as="p" className="mb-4 text-xs uppercase tracking-widest">
               {p.category} / {p.year}
             </Reveal>
-            <Reveal as="h1" className="text-3xl leading-tight uppercase">{p.title}</Reveal>
+            <Reveal as="h1" className="text-3xl leading-tight uppercase">
+              {p.title}
+            </Reveal>
             <dl className="mt-8 space-y-5 border-y border-neutral-200 py-7">
               {[
                 ["Cliente", `Familia ${p.family}`],
