@@ -51,21 +51,21 @@ export function ProjectGallery() {
                 <Reveal as="h2" className="text-[15px] leading-6">
                   Familia {p.family} · {p.location}
                 </Reveal>
-                <Reveal as="p" className="mt-1 text-[10px] tracking-wider text-neutral-500 uppercase">
+                <Reveal
+                  as="p"
+                  className="mt-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+                >
                   {p.category} / {p.year}
                 </Reveal>
               </div>
               <AnimatedArrow direction="diagonal" className="size-5" />
             </div>
-            <Reveal as="p" className="mt-3 text-xs leading-5 text-neutral-500">{p.title}</Reveal>
+            <Reveal as="p" className="mt-3 text-xs leading-5 text-neutral-500">
+              {p.title}
+            </Reveal>
           </Link>
         ))}
       </div>
-      <Reveal as="p" className="mt-10 text-[11px] text-neutral-500">
-        Imágenes generadas con IA e inspiradas en viviendas de Lima. Ilustran
-        nuestros servicios; no muestran los inmuebles de los clientes ni obras
-        construidas por MW Trazo.
-      </Reveal>
     </>
   );
 }

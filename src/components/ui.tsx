@@ -40,11 +40,17 @@ export function SectionTitle({
 }) {
   return (
     <div className={`mb-14 md:mb-16 ${className}`}>
-      <Reveal as="p" className="mb-7 flex items-center gap-4 text-sm font-bold uppercase sm:text-lg">
+      <Reveal
+        as="p"
+        className="mb-7 flex items-center gap-4 text-sm font-bold uppercase sm:text-lg"
+      >
         <span className="h-px w-10 shrink-0 bg-current sm:w-17.5" />
         {eyebrow}
       </Reveal>
-      <Reveal as={as} className="max-w-185 text-[30px] leading-[1.13] font-normal uppercase sm:ml-21.5 sm:text-[42px] lg:text-5xl">
+      <Reveal
+        as={as}
+        className="max-w-185 text-[30px] leading-[1.13] font-normal uppercase sm:ml-21.5 sm:text-[42px] lg:text-5xl"
+      >
         {title}
       </Reveal>
     </div>
@@ -132,7 +138,10 @@ export function Stats() {
           <Reveal as="p" className="text-4xl font-light md:text-5xl">
             <CountUp value={n} />
           </Reveal>
-          <Reveal as="p" className="mt-3 text-[10px] tracking-[.13em] uppercase sm:text-xs">
+          <Reveal
+            as="p"
+            className="mt-3 text-[10px] tracking-[.13em] uppercase sm:text-xs"
+          >
             {t}
           </Reveal>
         </div>
@@ -181,10 +190,16 @@ export function CallToAction() {
         className="-z-20 object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-black/65" />
-      <Reveal as="h2" className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px] text-white">
+      <Reveal
+        as="h2"
+        className="mx-auto max-w-2xl text-[30px] leading-tight font-normal uppercase sm:text-[36px] text-white"
+      >
         Inicia tu formalización hoy
       </Reveal>
-      <Reveal as="p" className="mx-auto mt-8 max-w-150 text-sm leading-relaxed text-white">
+      <Reveal
+        as="p"
+        className="mx-auto mt-8 max-w-150 text-sm leading-relaxed text-white"
+      >
         Conversemos sobre tu caso. Revisamos toda tu documentación
         preventivamente para asegurar el éxito de tu trámite, con rapidez y
         total transparencia en cada paso.
@@ -209,13 +224,19 @@ export function Footer() {
           <HomeLink className="text-2xl tracking-tight">
             MW<span className="font-semibold">TRAZO</span>
           </HomeLink>
-          <Reveal as="p" className="mt-5 max-w-xs text-xs leading-6 text-neutral-400">
+          <Reveal
+            as="p"
+            className="mt-5 max-w-xs text-xs leading-6 text-neutral-400"
+          >
             Especialistas en saneamiento físico legal y formalización predial.
             Seguridad jurídica para tu patrimonio.
           </Reveal>
         </div>
         <div>
-          <Reveal as="p" className="mb-5 text-xs font-semibold tracking-widest uppercase">
+          <Reveal
+            as="p"
+            className="mb-5 text-xs font-semibold tracking-widest uppercase"
+          >
             Empresa
           </Reveal>
           <div className="flex flex-col gap-3 text-xs text-neutral-400">
@@ -232,7 +253,10 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <Reveal as="p" className="mb-5 text-xs font-semibold tracking-widest uppercase">
+          <Reveal
+            as="p"
+            className="mb-5 text-xs font-semibold tracking-widest uppercase"
+          >
             Servicios
           </Reveal>
           <div className="flex flex-col gap-3 text-xs text-neutral-400">
@@ -248,7 +272,10 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <Reveal as="p" className="mb-5 text-xs font-semibold tracking-widest uppercase">
+          <Reveal
+            as="p"
+            className="mb-5 text-xs font-semibold tracking-widest uppercase"
+          >
             Contacto
           </Reveal>
           <div className="flex flex-col gap-3 text-xs text-neutral-400">
@@ -280,11 +307,6 @@ export function Footer() {
       >
         <div>
           <Reveal as="p">© 2021 MWTRAZO. Todos los derechos reservados.</Reveal>
-          <p className="mt-2 max-w-2xl text-[10px] leading-5 text-neutral-500">
-            Imágenes de inmuebles generadas con IA e inspiradas en Lima, de uso
-            referencial. MW Trazo brinda servicios de saneamiento físico legal
-            y formalización predial.
-          </p>
         </div>
         <BackToTop />
       </div>
